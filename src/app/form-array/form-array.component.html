@@ -1,0 +1,13 @@
+<h2>FORM ARRAY</h2>
+
+<form (submit)="preventDefaultHandler($event)">
+    <input
+        type="text"
+        (keyup.enter)="addTopic(topic)" 
+        #topic>
+    <ul>
+        <li *ngFor="let topic of topics.controls" (click)="removeTopic(topic)">
+            {{topic.value}}
+        </li>
+    </ul>
+</form>
